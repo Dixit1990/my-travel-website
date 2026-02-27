@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journeys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ url_for('static', filename='images/hero.jpeg') }}');">
+    <h1>See the world my way</h1>
+    <p>Exploring the world, one adventure at a time.......</p>
+</header>
+
+<h2>Places I visited</h2>
+
+<section id="journeys">
+    {% for trip in trips %}
+    <div class="journey-card">
+        <img src="{{ url_for('static', filename=trip.hero_image) }}" alt="{{ trip.title }}">
+        <h3>{{ trip.title }}</h3>
+        <p>{{ trip.story[:100] }}...</p>
+        <a href="{{ url_for('trip_details', trip_id=trip.id) }}" class="btn">Read More</a>
+    </div>
+    {% endfor %}
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions about my trips or need travel suggestions, feel free to reach out!</p>
+
+    <form action="mailto:dixitsagar786@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 My Journeys. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

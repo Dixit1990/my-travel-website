@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ trip.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ url_for('static', filename=trip.hero_image) }}');">
+    <h1>{{ trip.title }}</h1>
+    <p>{{ trip.region }}</p>
+</header>
+
+<section id="trip-story">
+    <h2>My Journey</h2>
+    <p>{{ trip.story }}</p>
+</section>
+
+<section id="trip-highlights">
+    <h2>Highlights</h2>
+    <ul>
+        {% for highlight in trip.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="gallery">
+    <h2>Photo Memories</h2>
+    <div class="gallery-grid">
+        {% for photo in trip.photos %}
+        <img src="{{ url_for('static', filename=photo) }}" alt="Trip Photo">
+        {% endfor %}
+    </div>
+</section>
+
+<section id="map">
+    <h2>Location Map</h2>
+    <iframe src="{{ trip.map_embed }}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<section style="text-align:center; padding: 20px;">
+    <a href="{{ url_for('home') }}" class="btn">⬅ Back to All Journeys</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 My Journeys. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
