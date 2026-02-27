@@ -17,14 +17,14 @@ trips = [
             "Travel tip: Pack warm clothes even in summer!"
         ],
         "photos": [
-            "images/trip1/photo1.jpg",
-            "images/trip1/photo2.jpg",
-            "images/trip1/photo3.jpg",
-            "images/trip1/photo4.jpg",
-            "images/trip1/photo5.jpg",
-            "images/trip1/photo6.jpg",
-            "images/trip1/photo7.jpg",
-            "images/trip1/photo8.jpg"
+            "images/trip1/photo-1.jpg",
+            "images/trip1/photo-2.jpg",
+            "images/trip1/photo-3.jpg",
+            "images/trip1/photo-4.jpg",
+            "images/trip1/photo-5.jpg",
+            "images/trip1/photo-6.jpg",
+            "images/trip1/photo-7.jpg",
+            "images/trip1/photo-8.jpg"
         ],
         "map_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31425.795163051225!2d77.04357818461045!3d10.080691165374704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0799794d099a6d%3A0x63250e5553c7e0c!2sMunnar%2C%20Kerala%20685612!5e0!3m2!1sen!2sin!4v1772014787226!5m2!1sen!2sin"
     },
