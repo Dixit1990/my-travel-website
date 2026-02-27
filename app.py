@@ -92,4 +92,4 @@ def trip_details(trip_id):
     return render_template('trip.html', trip=trip)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
