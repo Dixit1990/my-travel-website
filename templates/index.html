@@ -6,7 +6,15 @@
     <title>My Journeys</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
+<nav class="top-nav">
+  <a href="#hero" class="nav-link active">Home</a>
+  <a href="#journeys" class="nav-link">Trips</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</nav>
 
 <header id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ url_for('static', filename='images/hero.jpeg') }}');">
     <h1>See the world my way</h1>
@@ -42,6 +50,11 @@
 
         <button type="submit" class="btn">Send Message</button>
     </form>
+</section>
+
+<section id="about">
+  <h2>About My Travel Journal</h2>
+  <p>I document real destinations, practical tips, and visual memories so you can plan your next trip with confidence.</p>
 </section>
 
 <footer>
