@@ -17,8 +17,10 @@
 </nav>
 
 <header id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ url_for('static', filename='images/hero.jpeg') }}');">
+    <div class="hero-panel">
     <h1>See the world my way</h1>
-    <p>Exploring the world, one adventure at a time.......</p>
+    <p>Exploring the world, one adventure at a time...</p>
+    </div>
 </header>
 
 <h2>Places I visited</h2>
@@ -26,12 +28,37 @@
 <section id="journeys">
     {% for trip in trips %}
     <div class="journey-card">
-        <img src="{{ url_for('static', filename=trip.hero_image) }}" alt="{{ trip.title }}">
-        <h3>{{ trip.title }}</h3>
-        <p>{{ trip.story[:100] }}...</p>
-        <a href="{{ url_for('trip_details', trip_id=trip.id) }}" class="btn">Read More</a>
+  <div class="card-media-wrap">
+    <img src="{{ url_for('static', filename=trip.hero_image) }}" alt="{{ trip.title }}" loading="lazy" decoding="async">
+    <div class="card-overlay"></div>
+
+    <div class="chip-row">
+      <span class="chip chip-location">📍 {{ trip.region }}</span>
+      <span class="chip chip-season">🍃 Best: Jul-Oct</span>
     </div>
+
+    <span class="chip chip-budget">₹₹ 5k-10k</span>
+  </div>
+
+  <div class="card-content">
+    <h3>{{ trip.title }}</h3>
+    <p>{{ trip.story[:120] }}...</p>
+    <a href="{{ url_for('trip_details', trip_id=trip.id) }}" class="btn">Read More</a>
+  </div>
+</div>
     {% endfor %}
+</section>
+
+<section id="about">
+  <h2>About My Travel Journal</h2>
+  <p>Travel has always been more than just visiting new places for me—it’s about discovering landscapes, cultures,
+      stories, and moments that stay with you long after the journey ends. Through this website, I document my
+      real travel experiences, capturing destinations through photographs, practical insights, and personal
+      observations from every trip. You’ll find detailed travel notes, honest tips, scenic viewpoints, and useful
+      information that can help you plan your own adventures with confidence. From winding mountain roads to quiet
+      hill stations and vibrant local spots, each journey shared here reflects what I truly experienced. My goal
+      is simple: to inspire fellow travelers, share authentic memories, and make exploring new places easier and
+      more meaningful</p>
 </section>
 
 <section id="contact">
@@ -50,11 +77,6 @@
 
         <button type="submit" class="btn">Send Message</button>
     </form>
-</section>
-
-<section id="about">
-  <h2>About My Travel Journal</h2>
-  <p>I document real destinations, practical tips, and visual memories so you can plan your next trip with confidence.</p>
 </section>
 
 <footer>
